@@ -1,0 +1,55 @@
+// Flexbox Grid Settings
+// Set the number of columns you want to use on your layout.
+$flexboxgrid-grid-columns: 12 !default;
+// Set the gutter between columns.
+$flexboxgrid-gutter-width: 1rem !default;
+// Set a margin for the container sides.
+$flexboxgrid-outer-margin: 1rem !default;
+// Create or remove breakpoints for your project
+// Syntax:
+// name SIZErem,
+$flexboxgrid-breakpoints:
+  sm 40em 40rem,
+  md 46rem 46rem,
+  lg 50rem 50rem,
+  xl 90rem 90rem!default;
+$flexboxgrid-max-width: 95.714rem !default; // 1200px at 14px font size;
+
+// General Breakpoints
+$break-sm: 40rem;
+$break-md: 46rem;
+$break-lg: 50rem;
+// $break-xl: 65rem;
+$break-xl: 90rem;
+
+// z-index settings
+$z-index-hide: -1;
+$z-index-reset: auto;
+$z-index-low: 1;
+$z-index-medium: 2;
+$z-index-high: 3;
+$z-index-higher: 4;
+$z-index-below-modal: 11;
+$z-index-modal: 99;
+$z-index-above-all: 100;
+
+// Global sidebar, header and footer
+$global-sidenav-primary-width: 6.07rem;
+$global-sidenav-secondary-width: 15.35714rem;
+$global-fixed-header-height: 5.35714rem;
+$global-fixed-header-offset: 21.42714rem; // $global-sidenav-primary-width + $global-sidenav-secondary-width
+$global-fixed-footer-height: 3.71428rem;
+
+/* Margins and padding */
+//SPACING
+$margin-xs: .7142857rem; // 10px;
+$margin-s: .85714285rem; // 12px;
+$margin-m: 1rem; // 14px
+$margin-l: 2rem; // 28px
+$margin-xl: 3rem; //42px
+
+$padding-xs: $margin-xs;
+$padding-s: $margin-s;
+$padding-m: $margin-m;
+$padding-l: $margin-l;
+$padding-xl: $margin-xl; //45px
