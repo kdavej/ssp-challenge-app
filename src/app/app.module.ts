@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ComponentsModule } from './components/components.module';
-import { ServicesModule } from './services/services.module';
+import { MapService } from './services/map-service.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +18,8 @@ import { ServicesModule } from './services/services.module';
     BrowserAnimationsModule,
     MaterialModule,
     ComponentsModule,
-    ServicesModule,
   ],
-  providers: [],
+  providers: [MapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
