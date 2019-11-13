@@ -12,8 +12,10 @@ export class MapService {
   public view: esri.MapView;
   public map: esri.Map;
   public baseMapGallery: esri.BasemapGallery;
+  public mapEvents: any[] = [];
 
   public loadComplete$: Subject<boolean> = new Subject<boolean>();
+  public baseMapChanged$: Subject<string> = new Subject<string>();
 
   constructor() { }
 
@@ -38,6 +40,7 @@ export class MapService {
       }
 
       this.view = new MapView(mapViewProperties);
+      this.view.map.watch('basemap', (n, o, p, t) => { this.baseMapChanged(n); } );
 
       this.loadComplete$.next(true);
 
@@ -59,5 +62,7 @@ export class MapService {
     }
   }
 
-  
+  private baseMapChanged(mapName: string): void {
+    this.baseMapChanged$.next(mapName);
+  }
 }

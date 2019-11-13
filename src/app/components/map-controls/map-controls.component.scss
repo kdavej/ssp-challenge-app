@@ -1,3 +1,9 @@
 .map-controls {
-    margin-top: 10px;
+    .control-row {
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+    .mat-select {
+        color: #000;
+    }
 }

@@ -4,6 +4,7 @@ import { MapDisplayComponentComponent } from './map-display-component/map-displa
 import { MaterialModule } from '../material.module';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { MapControlsComponent } from './map-controls/map-controls.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,6 +13,7 @@ import { MapControlsComponent } from './map-controls/map-controls.component';
   imports: [
     CommonModule,
     MaterialModule,
+    ReactiveFormsModule,
   ]
 })
 export class ComponentsModule { }
