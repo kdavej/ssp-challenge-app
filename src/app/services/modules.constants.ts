@@ -28,3 +28,5 @@ export const LegendWidgetModule = `${baseGroup}${widgetsGroup}/Legend`;
 export const SearchWidgetModule = `${baseGroup}${widgetsGroup}/Search`;
 export const WatchUtilsModule = `${baseGroup}${coreGroup}/watchUtils`;
 export const ExtentModule = `${baseGroup}${geometryGroup}/Extent`;
+export const PopUpModule = `${baseGroup}${widgetsGroup}/Popup`;
+export const PopUpTemplateModule = `${baseGroup}/PopupTemplate`;

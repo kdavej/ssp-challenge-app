@@ -50,6 +50,12 @@ export class MapControlsComponent implements OnInit, OnDestroy {
       const queryString = `WETLAND_TY = '${value}'`;
       this.layerService.queryLayerFeatures(this.wetlandsLayer, !value || value.length === 0 ? '' : queryString);
     });
+
+    this.mapService.mapClicked$
+    .pipe(takeUntil(this.destroy$))
+    .subscribe((event: any) => {
+      
+    })
   }
 
   public ngOnDestroy(): void {

@@ -16,6 +16,7 @@ export class MapService {
 
   public loadComplete$: Subject<boolean> = new Subject<boolean>();
   public baseMapChanged$: Subject<string> = new Subject<string>();
+  public mapClicked$: Subject<any> = new Subject<any>();
 
   constructor() { }
 
@@ -41,7 +42,7 @@ export class MapService {
 
       this.view = new MapView(mapViewProperties);
       this.view.map.watch('basemap', (n, o, p, t) => { this.baseMapChanged(n); } );
-
+      this.view.on('click', (e) => this.mapClicked$.next(e));
       this.loadComplete$.next(true);
 
       return this.view;

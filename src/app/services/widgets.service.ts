@@ -2,14 +2,16 @@ import { Injectable } from '@angular/core';
 import { MapService } from './map-service.service';
 import esri = __esri;
 import { loadModules } from 'esri-loader';
-import { BasemapGalleryModule } from './modules.constants';
-import { Subscription } from 'rxjs';
+import { BasemapGalleryModule, PopUpTemplateModule } from './modules.constants';
+import { Subscription, Subject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class WidgetsService {
+
+  public popUpTemplateCreated$: Subject<esri.PopupTemplate> = new Subject<esri.PopupTemplate>();
 
   private baseMapGallery: esri.BasemapGallery;
   private baseMapGalleryProps: any = {
@@ -39,6 +41,16 @@ export class WidgetsService {
       }
     } else {
       this.addGalleryToMapView(this.baseMapGalleryProps);
+    }
+  }
+
+  public async getPopupTemplate(templateProps: esri.PopupTemplateProperties) {
+    try {
+      const [PopupTemplate] = await loadModules([PopUpTemplateModule]);
+      const popupTemplate = new PopupTemplate(templateProps);
+      this.popUpTemplateCreated$.next(popupTemplate);
+    } catch (err) {
+      console.log(err);
     }
   }
 
